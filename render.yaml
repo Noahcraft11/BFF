@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: viennax-bf-wien
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: COLLECTION_PREFIX
+        value: bf_
